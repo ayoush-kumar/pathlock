@@ -59,7 +59,7 @@ int main(){
     // Account Details
     int numAccounts = 3;
     int initialBalance = 1000;
-    int TransactionsPerThread = 50;
+    int numberOfTransactionsPerThread = 2;
 
     int numThreads = 2;
     
@@ -73,8 +73,10 @@ int main(){
         t.emplace_back(
                        simulateTransactions, ref(bank), 
                        i % numThreads, (i + 1) % numAccounts,
-                       50,TransactionsPerThread
+                       50,numberOfTransactionsPerThread
                        );
+
+        
     }
 
     // Join Threds
